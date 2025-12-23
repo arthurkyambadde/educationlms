@@ -11,16 +11,12 @@ import {
 } from "react-icons/fa6";
 
 export default function RecentActivity({ activities }) {
-  if (!activities || activities.length === 0) {
-    return (
-      <div className="card p-8 text-center">
-        <div className="text-4xl mb-3 flex justify-center">
-          <FaClipboardList className="text-gray-400" />
-        </div>
-        <p className="text-gray-600">{STRINGS.EMPTY.NO_PROGRESS_DESC}</p>
-      </div>
-    );
-  }
+  // Hooks must be called at the top level, before any early returns
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const getActivityIcon = (type) => {
     switch (type) {
@@ -35,11 +31,16 @@ export default function RecentActivity({ activities }) {
     }
   };
 
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  if (!activities || activities.length === 0) {
+    return (
+      <div className="card p-8 text-center">
+        <div className="text-4xl mb-3 flex justify-center">
+          <FaClipboardList className="text-gray-400" />
+        </div>
+        <p className="text-gray-600">{STRINGS.EMPTY.NO_PROGRESS_DESC}</p>
+      </div>
+    );
+  }
 
   const getRelativeTime = (dateString) => {
     if (!mounted) return "";
