@@ -19,32 +19,32 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section - Eduka Theme */}
-        <section className="bg-[#125D63] text-white py-20 lg:py-32 relative overflow-hidden">
+        <section className="bg-[#125D63] text-white min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden py-12 md:py-16">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10 bg-[url('/pattern.svg')]"></div>
 
-          <div className="container-custom relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="container-custom relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="text-left">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#FFB606] text-white text-sm font-bold mb-6 tracking-wide uppercase">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#FFB606] text-white text-sm font-bold mb-4 tracking-wide uppercase">
                   Welcome to {STRINGS.NAV.LOGO}
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-4 leading-tight">
                   {STRINGS.HERO.TITLE}
                 </h1>
-                <p className="text-lg md:text-xl mb-10 text-gray-200 leading-relaxed max-w-xl">
+                <p className="text-base md:text-lg lg:text-xl mb-6 text-gray-200 leading-relaxed max-w-xl">
                   {STRINGS.HERO.SUBTITLE}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     href={ROUTES.COURSES}
-                    className="bg-[#FFB606] text-white px-8 py-4 rounded-full font-bold hover:bg-[#e0a005] transition-colors shadow-lg text-center uppercase tracking-wide"
+                    className="bg-[#FFB606] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-[#e0a005] transition-colors shadow-lg text-center uppercase tracking-wide text-sm md:text-base"
                   >
                     {STRINGS.HERO.CTA_PRIMARY}
                   </Link>
                   <Link
                     href={ROUTES.DASHBOARD}
-                    className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#125D63] transition-colors text-center uppercase tracking-wide"
+                    className="bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white hover:text-[#125D63] transition-colors text-center uppercase tracking-wide text-sm md:text-base"
                   >
                     {STRINGS.HERO.CTA_SECONDARY}
                   </Link>
@@ -58,10 +58,10 @@ export default function HomePage() {
                   <Image
                     src="/hero-image.png"
                     alt="Students learning online with Eduka platform"
-                    width={600}
-                    height={500}
+                    width={550}
+                    height={450}
                     priority
-                    className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto"
                   />
                 </div>
               </div>
