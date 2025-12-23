@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CourseCard from "@/components/courses/CourseCard";
@@ -50,20 +51,18 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Hero Image / Illustration Placeholder */}
+              {/* Hero Image */}
               <div className="hidden lg:block relative">
-                <div className="absolute -inset-4 bg-[#FFB606] rounded-full opacity-20 blur-3xl"></div>
-                <div className="relative bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-2xl">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-4">
-                      <div className="h-40 bg-white/20 rounded-xl"></div>
-                      <div className="h-24 bg-white/20 rounded-xl"></div>
-                    </div>
-                    <div className="space-y-4 pt-8">
-                      <div className="h-24 bg-white/20 rounded-xl"></div>
-                      <div className="h-40 bg-white/20 rounded-xl"></div>
-                    </div>
-                  </div>
+                <div className="absolute -inset-4 bg-[#FFB606] rounded-full opacity-20 blur-3xl animate-pulse"></div>
+                <div className="relative">
+                  <Image
+                    src="/hero-image.png"
+                    alt="Students learning online with Eduka platform"
+                    width={600}
+                    height={500}
+                    priority
+                    className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
             </div>
